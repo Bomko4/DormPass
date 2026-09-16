@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#f1f5f6">
+<title>Перепустка — дані</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <main class="form-screen">
+      <h1>Документи</h1>
+      <p class="subtitle">Заповніть дані для створення перепустки</p>
+
+      <form id="passForm" class="pass-form">
+        <label class="field">
+          <span>Гуртожиток</span>
+          <select id="dorm" required>
+            <option value="1">1 (вул. Академіка А. Сахарова 25)</option>
+            <option value="2">2 (вул. Академіка А. Сахарова 25)</option>
+            <option value="3">3 (вул. Академіка А. Сахарова 25)</option>
+            <option value="4" selected>4 (вул. Академіка А. Сахарова 25)</option>
+            <option value="5">5 (вул. Академіка А. Сахарова 25)</option>
+            <option value="6">6 (вул. Академіка А. Сахарова 25)</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Номер кімнати</span>
+          <input id="room" type="text" placeholder="напр. 411б" required>
+        </label>
+
+        <label class="field">
+          <span>Прізвище</span>
+          <input id="lastname" type="text" placeholder="Гірний" required>
+        </label>
+
+        <label class="field">
+          <span>Ім'я</span>
+          <input id="firstname" type="text" placeholder="Роман" required>
+        </label>
+
+        <label class="field">
+          <span>По батькові</span>
+          <input id="middlename" type="text" placeholder="Дмитрович" required>
+        </label>
+
+        <label class="field">
+          <span>Дійсний до</span>
+          <input id="validUntil" type="date" required>
+        </label>
+
+        <button type="submit" class="primary-btn">Створити перепустку</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

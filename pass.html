@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#F1F5F6">
+<title>Документи</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-screen">
+    <h1 class="page-title">Документи</h1>
+
+    <section class="card">
+      <img class="seal" src="seal.png" alt="">
+
+      <h2 class="card-title">Перепустка<br>в гуртожиток</h2>
+
+      <div class="card-row">
+        <div class="card-label">Гуртожиток:</div>
+        <div class="card-value" id="dormOut">4 (вул. Академіка А. Сахарова 25)</div>
+      </div>
+
+      <div class="card-row">
+        <div class="card-label">Дійсний до:</div>
+        <div class="card-value" id="validUntilOut">31.08.2027</div>
+      </div>
+
+      <div class="card-row">
+        <div class="card-label">Проживає в:</div>
+        <div class="card-value" id="roomOut">411б</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="university">
+        Національний університет<br>«Львівська політехніка»
+      </div>
+
+      <div class="status-strip">
+        <div class="marquee">
+          <span class="marquee-track" id="marqueeTrack">
+            <span class="chunk">Перепустка дійсна до <b id="validUntilStripA">31.08.2027</b>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+            <span class="chunk">Перепустка дійсна до <b id="validUntilStripB">31.08.2027</b>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="fullname" id="fullnameOut">
+        Роман<br>Дмитрович<br>Гірний
+      </div>
+    </section>
+
+    <nav class="tabbar">
+      <div class="tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9h12v-9"/></svg>
+        <span>Головна</span>
+      </div>
+      <div class="tab active">
+        <span class="tab-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 12.5h5M9.5 15.5h5M9.5 9.5h2.5"/></svg>
+        </span>
+        <span>Документи</span>
+      </div>
+      <div class="tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>
+        <span>Розклад</span>
+      </div>
+      <div class="tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>
+        <span>Сервіси</span>
+      </div>
+      <div class="tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10" cy="8" r="3.3"/><path d="M4.5 20c0-3.6 2.8-6 5.5-6s5.5 2.4 5.5 6"/><circle cx="18.5" cy="16" r="2"/><path d="M18.5 12.7v.8M18.5 18.5v.8M21.3 16h-.8M16.5 16h-.8M20.4 13.6l-.6.6M17.2 17.8l-.6.6M20.4 18.4l-.6-.6M17.2 14.2l-.6-.6"/></svg>
+        <span>Профіль</span>
+      </div>
+    </nav>
+  </div>
+
+  <script src="pass.js"></script>
+</body>
+</html>

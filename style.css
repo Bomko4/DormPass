@@ -86,6 +86,13 @@ h1 {
   border-color: var(--olive);
 }
 
+.field-hint {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
 .primary-btn {
   margin-top: 8px;
   background: var(--olive);

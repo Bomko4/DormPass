@@ -25,5 +25,5 @@ if (data) {
   document.getElementById('validUntilStripA').textContent = dateFmt;
   document.getElementById('validUntilStripB').textContent = dateFmt;
   document.getElementById('fullnameOut').innerHTML =
-    `${data.lastname}<br>${data.firstname}<br>${data.middlename}`;
+    `${data.firstname}<br>${data.middlename}<br>${data.lastname}`;
 }

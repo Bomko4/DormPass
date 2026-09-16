@@ -22,8 +22,8 @@ if (data) {
   document.getElementById('dormOut').textContent = dormMap[data.dorm] || data.dorm;
   document.getElementById('roomOut').textContent = data.room;
   document.getElementById('validUntilOut').textContent = dateFmt;
-  document.getElementById('validUntilStripOut').textContent = `до ${dateFmt}`;
-  document.getElementById('validUntilStripOut2').textContent = dateFmt;
+  document.getElementById('validUntilStripA').textContent = dateFmt;
+  document.getElementById('validUntilStripB').textContent = dateFmt;
   document.getElementById('fullnameOut').innerHTML =
     `${data.lastname}<br>${data.firstname}<br>${data.middlename}`;
 }

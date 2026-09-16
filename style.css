@@ -1,0 +1,249 @@
+:root {
+  --bg: #eef1ee;
+  --card-bg: #e4f0c8;
+  --card-bg-2: #dcecb8;
+  --olive: #6f8c2b;
+  --olive-dark: #5a7322;
+  --text-dark: #1f2a12;
+  --text-muted: #4a5a35;
+  --white: #ffffff;
+  font-family: -apple-system, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #d9dcd9;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px 0;
+}
+
+.phone {
+  width: 100%;
+  max-width: 430px;
+  min-height: 900px;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
+
+.statusbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px 6px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #111;
+}
+
+.statusbar .pill {
+  width: 130px;
+  height: 34px;
+  background: #000;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statusbar .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #3ddc6a;
+}
+
+.right-icons {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.battery {
+  background: #111;
+  color: #fff;
+  border-radius: 6px;
+  padding: 1px 6px;
+  font-size: 12px;
+}
+
+h1 {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin: 18px 24px 6px;
+}
+
+/* ---- form screen ---- */
+.form-screen { flex: 1; padding-bottom: 24px; }
+
+.subtitle {
+  margin: 0 24px 20px;
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+.pass-form {
+  margin: 0 20px;
+  background: var(--white);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.field input,
+.field select {
+  font-family: inherit;
+  font-size: 16px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1.5px solid #dfe3dc;
+  background: #f7f9f5;
+  color: var(--text-dark);
+  outline: none;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: var(--olive);
+}
+
+.primary-btn {
+  margin-top: 8px;
+  background: var(--olive);
+  color: #fff;
+  border: none;
+  padding: 15px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary-btn:active { background: var(--olive-dark); }
+
+/* ---- pass screen ---- */
+.pass-screen { flex: 1; padding: 0 20px 24px; }
+
+.card {
+  background: linear-gradient(180deg, var(--card-bg) 0%, var(--card-bg-2) 100%);
+  border-radius: 22px;
+  padding: 28px 24px 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 640px;
+}
+
+.card-title {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-dark);
+  margin: 0 0 28px;
+}
+
+.card-row {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: var(--text-dark);
+}
+
+.card-label {
+  font-size: 20px;
+  color: var(--text-dark);
+}
+
+.card-value {
+  font-weight: 700;
+  font-size: 21px;
+  margin-top: 2px;
+}
+
+.divider {
+  height: 3px;
+  background: var(--olive);
+  opacity: 0.5;
+  border-radius: 2px;
+  margin: 8px 0 20px;
+}
+
+.university {
+  font-size: 19px;
+  color: var(--text-dark);
+  line-height: 1.3;
+  margin-bottom: 22px;
+}
+
+.status-strip {
+  background: var(--olive);
+  color: #fff;
+  font-weight: 700;
+  font-size: 17px;
+  padding: 12px 24px;
+  margin: 0 -24px 20px;
+  display: flex;
+  gap: 10px;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.sep { opacity: 0.8; }
+
+.fullname {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.2;
+  padding-bottom: 24px;
+}
+
+/* ---- tabbar ---- */
+.tabbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #fff;
+  border-radius: 30px;
+  margin: 0 16px 18px;
+  padding: 10px 4px 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #8a9080;
+  flex: 1;
+}
+
+.tab .icon { font-size: 20px; }
+
+.tab.active { color: #2f7fb0; }
+
+@media (max-width: 380px) {
+  .card-title { font-size: 26px; }
+  .fullname { font-size: 24px; }
+}

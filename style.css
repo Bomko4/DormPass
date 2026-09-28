@@ -10,7 +10,7 @@
   --white: #ffffff;
   --nav-blue: #1aa3e0;
   --nav-gray: #8b939c;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", sans-serif;
 }
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -29,7 +29,7 @@ body {
 
 h1 {
   font-size: 34px;
-  font-weight: 800;
+  font-weight: 700; /* Було 800, зменшено для легкості */
   color: var(--text-dark);
   margin: 0;
 }
@@ -81,6 +81,7 @@ h1 {
   outline: none;
 }
 
+.field input:focus,
 .field select:focus {
   border-color: var(--olive);
 }
@@ -93,7 +94,7 @@ h1 {
 }
 
 .primary-btn {
-  font-weight: 800;
+  margin-top: 8px;
   background: var(--olive);
   color: #fff;
   border: none;
@@ -111,6 +112,7 @@ h1 {
   height: 100vh;
   height: 100dvh;
   display: flex;
+  flex-direction: column;
   padding: max(16px, env(safe-area-inset-top)) 16px max(10px, env(safe-area-inset-bottom));
   overflow: hidden;
 }
@@ -118,7 +120,7 @@ h1 {
 .page-title {
   font-size: clamp(28px, 4.1dvh, 30px);
   line-height: 1.15;
-  font-weight: 800;
+  font-weight: 700; /* Було 800 */
   color: #000;
   flex: 0 0 auto;
   margin: 0 2px clamp(8px, 1.6dvh, 12px);
@@ -136,7 +138,7 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
   color: var(--card-text);
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-family: -apple-system, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 .card > * { position: relative; z-index: 1; }
@@ -178,7 +180,7 @@ h1 {
 }
 
 .card-value {
-  font-weight: 700;
+  font-weight: 600; /* Було 700 */
   font-size: inherit;
   color: var(--card-text);
 }
@@ -199,7 +201,7 @@ h1 {
 .status-strip {
   background: var(--olive-strip);
   color: #fff;
-  font-weight: 700;
+  font-weight: 600; /* Було 700 */
   font-size: clamp(10.5px, 1.8dvh, 13px); /* Зменшено шрифт для вужчої лінії */
   padding: clamp(5px, 1dvh, 8px) 0; /* Зменшено паддінги для вужчої смужки */
   margin: 0 -16px;
@@ -256,7 +258,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   gap: 2px;
-  font-size: 12px;
+  font-size: 11px;
   color: var(--nav-gray);
   flex: 1;
 }
@@ -264,7 +266,6 @@ h1 {
 .tab svg {
   width: 23px;
   height: 23px;
-  stroke-width: 2;
 }
 
 .tab-pill {

@@ -1,37 +1,36 @@
 :root {
   --page-bg: #f3f7f8;
-  --card-bg: #eff9d1;
+  --card-bg: #ecf8cc;
   --olive: #688217;
-  --olive-strip: #6a8420;
-  --divider: #c2e164;
-  --text-dark: #33461d;
+  --olive-dark: #556b12;
+  --olive-strip: #6b8520;
+  --badge-bg: #c1e165;
+  --divider: #b9db59;
+  --text-dark: #253315;
   --text-muted: #53623d;
-  --card-text: #3b4c24;
+  --card-text: #283717;
   --white: #ffffff;
-  --nav-blue: #1aa3e0;
-  --nav-gray: #8b939c;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", sans-serif;
+  --nav-blue: #189cd8;
+  --nav-gray: #8e959e;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
 
 html, body {
   height: 100%;
   margin: 0;
   overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
   background: var(--page-bg);
   overflow: hidden;
   color: var(--text-dark);
-}
-
-h1 {
-  font-size: 34px;
-  font-weight: 700; /* Було 800, зменшено для легкості */
-  color: var(--text-dark);
-  margin: 0;
 }
 
 /* ---- form screen ---- */
@@ -42,7 +41,12 @@ h1 {
   flex-direction: column;
 }
 
-.form-screen h1 { margin: 4px 4px 6px; }
+.form-screen h1 {
+  font-size: 34px;
+  font-weight: 700;
+  color: #000;
+  margin: 4px 4px 6px;
+}
 
 .subtitle {
   margin: 0 4px 20px;
@@ -57,7 +61,7 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
 .field {
@@ -105,7 +109,9 @@ h1 {
   cursor: pointer;
 }
 
-.primary-btn:active { background: var(--olive-dark); }
+.primary-btn:active {
+  background: var(--olive-dark);
+}
 
 /* ---- pass screen ---- */
 .app-screen {
@@ -113,113 +119,153 @@ h1 {
   height: 100dvh;
   display: flex;
   flex-direction: column;
-  padding: max(16px, env(safe-area-inset-top)) 16px max(10px, env(safe-area-inset-bottom));
+  padding: max(14px, env(safe-area-inset-top)) 16px max(12px, env(safe-area-inset-bottom));
   overflow: hidden;
 }
 
 .page-title {
-  font-size: clamp(28px, 4.1dvh, 30px);
+  font-size: 32px;
   line-height: 1.15;
-  font-weight: 700; /* Було 800 */
-  color: #000;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #000000;
   flex: 0 0 auto;
-  margin: 0 2px clamp(8px, 1.6dvh, 12px);
+  margin: 6px 0 14px;
 }
 
+/* ---- card ---- */
 .card {
   flex: 1 1 auto;
   min-height: 0;
   background: var(--card-bg);
-  border-radius: 16px;
-  padding: clamp(18px, 3.1dvh, 24px) 16px;
+  border-radius: 18px;
+  padding: 22px 18px 28px;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   color: var(--card-text);
-  font-family: -apple-system, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-.card > * { position: relative; z-index: 1; }
+.card > * {
+  position: relative;
+  z-index: 1;
+}
 
+/* Водяний знак (герб) */
 .card > .seal {
   position: absolute;
-  top: 4%;
-  left: 24%;
-  right: auto;
-  width: 72%;
-  max-width: none;
-  opacity: 0.2;
-  transform: translateX(0);
+  top: 26px;
+  right: 22px;
+  width: 63%;
+  max-width: 245px;
+  opacity: 0.17;
   pointer-events: none;
   z-index: 0;
 }
 
-.card-title {
-  font-size: clamp(23px, 4.3dvh, 29px);
-  font-weight: 700; /* Було 800 */
-  line-height: 1.05; /* Трохи ущільнено */
-  color: var(--card-text);
-  margin: 0;
+/* Верхній блок: Заголовок + Кружечок з цифрою */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 22px;
 }
 
+.card-title {
+  font-size: clamp(26px, 4.1dvh, 30px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.3px;
+  color: var(--card-text);
+  margin: 2px 0 0;
+}
+
+.dorm-badge {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--badge-bg);
+  color: var(--card-text);
+  font-size: 33px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Деталі перепустки */
 .card-details {
   display: flex;
   flex-direction: column;
+  gap: 16px;
 }
 
 .card-row {
-  font-size: clamp(15px, 2.35dvh, 18px);
+  font-size: clamp(16px, 2.35dvh, 18.5px);
   color: var(--card-text);
-  line-height: 1.25; /* Зменшено з 1.3 для компактності */
+  line-height: 1.28;
 }
 
-.card-label { 
-  color: var(--card-text); 
+.card-label {
+  font-weight: 400;
+  color: var(--card-text);
 }
 
 .card-value {
-  font-weight: 600; /* Було 700 */
-  font-size: inherit;
+  font-weight: 500;
   color: var(--card-text);
+  margin-top: 1px;
 }
 
+/* Лінія-роздільник */
 .divider {
-  height: 1.5px; /* Було 3px - лінія була надто товстою */
+  height: 2px;
   background: var(--divider);
   border-radius: 1px;
   align-self: stretch;
+  margin: 24px 0 18px;
 }
 
+/* Назва університету */
 .university {
-  font-size: clamp(14px, 2.2dvh, 17px);
+  font-size: clamp(16px, 2.3dvh, 18.5px);
+  font-weight: 400;
   color: var(--card-text);
-  line-height: 1.25;
+  line-height: 1.3;
+  margin-bottom: 18px;
 }
 
+/* Зелена біжуча смужка */
 .status-strip {
   background: var(--olive-strip);
-  color: #fff;
-  font-weight: 600; /* Було 700 */
-  font-size: clamp(10.5px, 1.8dvh, 13px); /* Зменшено шрифт для вужчої лінії */
-  padding: clamp(5px, 1dvh, 8px) 0; /* Зменшено паддінги для вужчої смужки */
-  margin: 0 -16px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: clamp(13px, 1.95dvh, 15px);
+  padding: 6px 0;
+  margin: 0 -18px 20px;
   overflow: hidden;
-  width: calc(100% + 32px);
-  max-width: calc(100% + 32px);
+  width: calc(100% + 36px);
 }
 
-.marquee { overflow: hidden; width: 100%; }
+.marquee {
+  overflow: hidden;
+  width: 100%;
+}
 
 .marquee-track {
   display: inline-flex;
   white-space: nowrap;
   will-change: transform;
-  animation: scroll-left 12s linear infinite;
+  animation: scroll-left 14s linear infinite;
 }
 
-.chunk { padding-left: 16px; }
+.chunk {
+  padding-left: 12px;
+}
 
 @keyframes scroll-left {
   from { transform: translateX(0); }
@@ -230,59 +276,59 @@ h1 {
   .marquee-track { animation: none; }
 }
 
+/* ПІБ студента */
 .fullname {
-  font-size: clamp(23px, 4.3dvh, 29px);
-  font-weight: 500; /* Трохи додано ваги для читабельності імені */
+  font-size: clamp(26px, 4.1dvh, 31px);
+  font-weight: 400;
   color: var(--card-text);
-  line-height: 1.15;
+  line-height: 1.14;
+  letter-spacing: -0.2px;
+  margin-bottom: auto; /* Залишає природний вільний простір внизу картки */
 }
 
-/* ---- tabbar ---- */
+/* ---- tabbar (нижня навігація) ---- */
 .tabbar {
   flex: 0 0 auto;
   display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-  background: #fff;
-  border-radius: 26px;
-  margin-top: clamp(18px, 3.8dvh, 30px);
-  margin-bottom: max(10px, env(safe-area-inset-bottom));
-  margin-left: -5px;
-  margin-right: -5px;
-  padding: 5px 4px 7px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 999px;
+  margin-top: 22px;
+  padding: 5px 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
 }
 
 .tab {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
-  font-size: 11px;
+  justify-content: center;
+  gap: 3px;
+  font-size: 10.5px;
+  font-weight: 500;
   color: var(--nav-gray);
   flex: 1;
+  padding: 6px 4px;
+  border-radius: 999px;
+  text-decoration: none;
+  user-select: none;
 }
 
 .tab svg {
-  width: 23px;
-  height: 23px;
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.8;
 }
 
-.tab-pill {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px 24px;
-  border-radius: 14px;
-}
-
+/* Активна вкладка з сірою капсулою навколо іконки і тексту */
 .tab.active {
+  background: #eef1f4;
   color: var(--nav-blue);
   font-weight: 600;
+  padding: 6px 10px;
 }
 
-.tab.active .tab-pill {
-  background: #eef1f3;
+.tab.active svg {
+  color: var(--nav-blue);
 }
-
-.tab.active svg { color: var(--nav-blue); }

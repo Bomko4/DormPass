@@ -31,6 +31,7 @@ if (data) {
 
   const dateFmt = '31.08.2027';
 
+  document.getElementById('dormBadge').textContent = data.dorm;
   document.getElementById('dormOut').textContent = dormMap[data.dorm] || data.dorm;
   document.getElementById('roomOut').textContent = data.room;
   document.getElementById('validUntilOut').textContent = dateFmt;

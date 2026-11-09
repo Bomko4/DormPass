@@ -17,21 +17,26 @@
     <section class="card">
       <img class="seal" src="image.png" alt="">
 
-      <h2 class="card-title">Перепустка<br>в гуртожиток</h2>
-
-      <div class="card-row">
-        <div class="card-label">Гуртожиток:</div>
-        <div class="card-value" id="dormOut">4 (вул. Академіка А. Сахарова 25)</div>
+      <div class="card-header">
+        <h2 class="card-title">Перепустка<br>в гуртожиток</h2>
+        <div class="dorm-badge" id="dormBadge">4</div>
       </div>
 
-      <div class="card-row">
-        <div class="card-label">Дійсний до:</div>
-        <div class="card-value" id="validUntilOut">31.08.2027</div>
-      </div>
+      <div class="card-details">
+        <div class="card-row">
+          <div class="card-label">Гуртожиток:</div>
+          <div class="card-value" id="dormOut">4 (вул. Академіка А. Сахарова 25)</div>
+        </div>
 
-      <div class="card-row">
-        <div class="card-label">Проживає в:</div>
-        <div class="card-value" id="roomOut">411б</div>
+        <div class="card-row">
+          <div class="card-label">Дійсний до:</div>
+          <div class="card-value" id="validUntilOut">31.08.2027</div>
+        </div>
+
+        <div class="card-row">
+          <div class="card-label">Проживає в:</div>
+          <div class="card-value" id="roomOut">411б</div>
+        </div>
       </div>
 
       <div class="divider"></div>
@@ -42,10 +47,10 @@
 
       <div class="status-strip">
         <div class="marquee">
-          <span class="marquee-track" id="marqueeTrack">
+          <div class="marquee-track" id="marqueeTrack">
             <span class="chunk">Перепустка дійсна до <b id="validUntilStripA">31.08.2027</b>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
             <span class="chunk">Перепустка дійсна до <b id="validUntilStripB">31.08.2027</b>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-          </span>
+          </div>
         </div>
       </div>
 

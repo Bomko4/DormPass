@@ -29,7 +29,7 @@ if (data) {
     '22': '22 (м. Львів, вул. В. Великого, 57 (5 під’їзд))'
   };
 
-  const dateFmt = '31.08.2027';
+  const dateFmt = ' 31.08.2027';
 
   document.getElementById('dormBadge').textContent = data.dorm;
   document.getElementById('dormOut').textContent = dormMap[data.dorm] || data.dorm;

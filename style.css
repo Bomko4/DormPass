@@ -3,18 +3,17 @@
   --card-bg: #ecf8cc;
   --olive: #688217;
   --olive-dark: #556b12;
-  --olive-strip: #6a841e;
+  --olive-strip: #6f8b1f; /* Світліший і насиченіший оливково-зелений як в оригіналі */
   --badge-bg: #c0df65;
   --divider: #c0df65;
-  --text-dark: #233114;
+  --text-dark: #223013;
   --text-secondary: #31411f;
   --text-muted: #53623d;
   --white: #ffffff;
   --nav-blue: #189cd8;
-  --nav-icon: #5c656d;
-  --nav-label: #9ea5ad;
+  --nav-icon: #5c666e;
+  --nav-label: #98a0a8;
   --pill-bg: #eef1f4;
-  /* ВАЖЛИВО: Inter має стояти ПЕРШИМ, як у Flutter-додатку */
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
@@ -48,7 +47,7 @@ body {
 
 .form-screen h1 {
   font-size: 32px;
-  font-weight: 600;
+  font-weight: 700;
   color: #000;
   margin: 4px 4px 6px;
 }
@@ -124,7 +123,6 @@ body {
   height: 100dvh;
   display: flex;
   flex-direction: column;
-  /* Точні відступи зверху та знизу під iOS Safe Area як у Flutter Scaffold */
   padding: calc(env(safe-area-inset-top, 0px) + 6px) 16px calc(env(safe-area-inset-bottom, 0px) + 8px);
   overflow: hidden;
 }
@@ -133,8 +131,8 @@ body {
 .page-title {
   font-size: 30px;
   line-height: 1.15;
-  font-weight: 600;
-  letter-spacing: -0.3px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
   color: #000000;
   flex: 0 0 auto;
   margin: 0 0 14px 0;
@@ -160,15 +158,15 @@ body {
   z-index: 1;
 }
 
-/* Водяний знак герба — точна позиція та контрастність з оригіналу */
+/* Водяний знак герба — більший розмір і оригінальний синій колір PNG з прозорістю */
 .card > .seal {
   position: absolute;
-  top: 21px;
-  left: 24.5%;
-  width: 68.5%;
-  max-width: 256px;
-  filter: brightness(0) saturate(100%) invert(20%) sepia(26%) saturate(925%) hue-rotate(46deg) brightness(92%) contrast(95%);
-  opacity: 0.21;
+  top: 22px;
+  left: 21.8%;
+  width: 73.5%;
+  max-width: 274px;
+  filter: none; /* Без перефарбування в зелений, щоб зберегти синюватий відтінок оригіналу */
+  opacity: 0.165;
   pointer-events: none;
   z-index: 0;
 }
@@ -183,8 +181,8 @@ body {
   border-radius: 50%;
   background: var(--badge-bg);
   color: var(--text-dark);
-  font-size: 44px;
-  font-weight: 600;
+  font-size: 43px;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -195,36 +193,36 @@ body {
 /* Заголовок "Перепустка в гуртожиток" */
 .card-title {
   font-size: 28px;
-  font-weight: 600;
-  line-height: 1.1;
-  letter-spacing: -0.3px;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.4px;
   color: var(--text-dark);
-  margin: 0 76px 19px 0;
+  margin: 0 76px 20px 0;
 }
 
-/* Блок полів */
+/* Блок полів — збільшені відступи між групами */
 .card-details {
   display: flex;
   flex-direction: column;
-  gap: 17px;
+  gap: 20px;
 }
 
 .card-row {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  font-size: 17px;
+  gap: 3px;
+  font-size: 16.5px;
   line-height: 1.24;
   letter-spacing: -0.15px;
 }
 
 .card-label {
-  font-weight: 400;
+  font-weight: 500;
   color: var(--text-dark);
 }
 
 .card-value {
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-dark);
 }
 
@@ -238,22 +236,22 @@ body {
   flex-shrink: 0;
 }
 
-/* Назва університету */
+/* Назва університету — єдиний тонкий текст (400) */
 .university {
-  font-size: 17.5px;
+  font-size: 17px;
   font-weight: 400;
   color: var(--text-secondary);
   line-height: 1.32;
-  letter-spacing: -0.15px;
+  letter-spacing: -0.1px;
   padding-left: 4px;
   margin-bottom: 22px;
 }
 
-/* Зелена біжуча смужка */
+/* Зелена біжуча смужка — світліший оливковий фон і жирніший текст */
 .status-strip {
   background: var(--olive-strip);
   color: #ffffff;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14.5px;
   letter-spacing: -0.1px;
   height: 30px;
@@ -267,7 +265,7 @@ body {
 
 .status-strip b,
 .status-strip span {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .status-strip .dot {
@@ -303,14 +301,14 @@ body {
   .marquee-track { animation: none; }
 }
 
-/* ПІБ студента — вирівняно по лівому краю як в оригіналі */
+/* ПІБ студента — трохи менший розмір (28px) і виразніша вага */
 .fullname {
-  font-size: 30px;
-  font-weight: 400;
+  font-size: 28px;
+  font-weight: 500;
   color: var(--text-secondary);
-  line-height: 1.1;
-  letter-spacing: -0.3px;
-  padding-left: 0;
+  line-height: 1.13;
+  letter-spacing: -0.25px;
+  padding-left: 2px;
   margin-bottom: auto;
 }
 
@@ -343,27 +341,27 @@ body {
   user-select: none;
 }
 
+/* Збільшені іконки в нижній панелі */
 .tab svg {
-  width: 22px;
-  height: 22px;
+  width: 24.5px;
+  height: 24.5px;
   color: var(--nav-icon);
 }
 
-/* Компактна капсула навколо активного пункту */
 .tab-pill {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 3px;
-  width: 76px;
+  width: 78px;
   height: 54px;
   border-radius: 27px;
 }
 
 .tab.active {
   color: var(--nav-blue);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .tab.active .tab-pill {

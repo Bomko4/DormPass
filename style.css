@@ -1,5 +1,5 @@
 :root {
-  --page-bg: #f2f6f7;
+  --page-bg: #f1f5f6;
   --card-bg: #ecf8cc;
   --olive: #688217;
   --olive-dark: #556b12;
@@ -7,14 +7,14 @@
   --badge-bg: #c0df65;
   --divider: #c0df65;
   --text-dark: #233114;
-  --text-secondary: #344422;
+  --text-secondary: #334321;
   --text-muted: #53623d;
   --white: #ffffff;
-  --nav-blue: #199bd7;
-  --nav-icon: #5a6065;
-  --nav-label: #a0a6ad;
+  --nav-blue: #189cd8;
+  --nav-icon: #60737d;
+  --nav-label: #9fa6ad;
   --pill-bg: #eef1f4;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", Roboto, sans-serif;
 }
 
 * {
@@ -36,7 +36,7 @@ body {
   color: var(--text-dark);
 }
 
-/* ---- form screen (екран вводу даних) ---- */
+/* ---- form screen ---- */
 .form-screen {
   min-height: 100%;
   padding: max(20px, env(safe-area-inset-top)) 20px 32px;
@@ -116,7 +116,7 @@ body {
   background: var(--olive-dark);
 }
 
-/* ---- pass screen (головний екран документа) ---- */
+/* ---- pass screen (DocumentsPage) ---- */
 .app-screen {
   height: 100vh;
   height: 100dvh;
@@ -126,7 +126,6 @@ body {
   overflow: hidden;
 }
 
-/* Заголовок "Документи" */
 .page-title {
   font-size: 32px;
   line-height: 1.12;
@@ -137,7 +136,7 @@ body {
   margin: 4px 0 14px 0;
 }
 
-/* ---- Картка перепустки ---- */
+/* ---- DormPassCard ---- */
 .card {
   flex: 1 1 auto;
   min-height: 0;
@@ -157,19 +156,20 @@ body {
   z-index: 1;
 }
 
-/* Водяний знак (герб) — точні пропорції та позиція зі скріншота */
+/* Водяний знак герба (перефарбовує синій PNG у темно-оливковий водяний знак) */
 .card > .seal {
   position: absolute;
-  top: 4.2%;
-  left: 22.5%;
-  width: 73%;
-  max-width: 270px;
-  opacity: 0.22;
+  top: 4.1%;
+  left: 22.8%;
+  width: 72.5%;
+  max-width: 268px;
+  filter: brightness(0) saturate(100%) invert(20%) sepia(26%) saturate(925%) hue-rotate(46deg) brightness(94%) contrast(92%);
+  opacity: 0.16;
   pointer-events: none;
   z-index: 0;
 }
 
-/* Круглий бейдж "4" */
+/* Круглий бейдж з номером гуртожитку */
 .dorm-badge {
   position: absolute;
   top: 20px;
@@ -198,7 +198,7 @@ body {
   margin: 0 80px 18px 0;
 }
 
-/* Деталі: Гуртожиток, Дійсний до, Проживає в */
+/* Поля даних */
 .card-details {
   display: flex;
   flex-direction: column;
@@ -224,7 +224,7 @@ body {
   color: var(--text-dark);
 }
 
-/* Лінія-роздільник */
+/* Зелена лінія-роздільник */
 .divider {
   height: 2.5px;
   background: var(--divider);
@@ -234,7 +234,7 @@ body {
   flex-shrink: 0;
 }
 
-/* Назва університету (з легким відступом 4px зліва як на скріні) */
+/* Назва університету */
 .university {
   font-size: clamp(17px, 2.25dvh, 18.5px);
   font-weight: 400;
@@ -245,7 +245,7 @@ body {
   margin-bottom: clamp(18px, 2.7dvh, 23px);
 }
 
-/* Зелена біжуча смужка */
+/* Рухома зелена стрічка (MarqueeText) */
 .status-strip {
   background: var(--olive-strip);
   color: #ffffff;
@@ -341,12 +341,11 @@ body {
 }
 
 .tab svg {
-  width: 23px;
-  height: 23px;
+  width: 22px;
+  height: 22px;
   color: var(--nav-icon);
 }
 
-/* Обгортка активної капсули */
 .tab-pill {
   display: flex;
   flex-direction: column;
